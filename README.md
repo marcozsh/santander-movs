@@ -47,8 +47,8 @@ Edita el archivo `.env`:
 # usa comillas dobles: SANTANDER_PASSWORD="MiClave#123"
 SANTANDER_USERNAME=tu_rut_sin_puntos
 SANTANDER_PASSWORD="tu_contraseña"
-SANTANDER_CLIENT_ID=4e9af62c-6563-42cd-aab6-0dd7d50a9131
-SANTANDER_API_CLIENT_ID=O2XRSU4kVspEGbLDDGfFC5BOTrGKh5Ts
+SANTANDER_CLIENT_ID=xxxxx-xxxx-xxxx-xxxx-xxxxx
+SANTANDER_API_CLIENT_ID=xxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 # Configuración del servidor
 PORT=3000
@@ -118,10 +118,10 @@ Obtiene los movimientos bancarios organizados por fecha.
 **Body (opcional - usa .env si no se proporciona):**
 ```json
 {
-  "username": "00202038050",
+  "username": "00tu_rut_sin_puntos_ni_guion",
   "password": "tu_contraseña",
-  "clientId": "4e9af62c-6563-42cd-aab6-0dd7d50a9131",
-  "apiClientId": "O2XRSU4kVspEGbLDDGfFC5BOTrGKh5Ts",
+  "clientId": "xxxxxx-xxxx-xxxx-xxxx-xxxxx",
+  "apiClientId": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
   "headless": true,
   "verbose": false,
   "limit": "50"
@@ -221,10 +221,10 @@ curl -X POST http://localhost:3000/api/movimientos \
 curl -X POST http://localhost:3000/api/totales \
   -H "Content-Type: application/json" \
   -d '{
-    "username": "00202038050",
+    "username": "00tu_rut_sin_puntos_ni_guion",
     "password": "tu_contraseña",
-    "clientId": "4e9af62c-6563-42cd-aab6-0dd7d50a9131",
-    "apiClientId": "O2XRSU4kVspEGbLDDGfFC5BOTrGKh5Ts",
+    "clientId": "xxxxxx-xxxx-xxxx-xxxx-xxxxx",
+    "apiClientId": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
     "headless": true,
     "limit": "50"
   }'
@@ -257,10 +257,10 @@ import requests
 
 # Obtener totales
 response = requests.post('http://localhost:3000/api/totales', json={
-    'username': '00202038050',
+    'username': '00tu_rut_sin_puntos_ni_guion',
     'password': 'tu_contraseña',
-    'clientId': '4e9af62c-6563-42cd-aab6-0dd7d50a9131',
-    'apiClientId': 'O2XRSU4kVspEGbLDDGfFC5BOTrGKh5Ts',
+    'clientId': 'xxxxxx-xxxx-xxxx-xxxx-xxxxx',
+    'apiClientId': 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
     'headless': True,
     'limit': '50'
 })
