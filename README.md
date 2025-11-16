@@ -293,10 +293,6 @@ santander-movs/
 
 | Variable | Descripción | Default |
 |----------|-------------|---------|
-| `SANTANDER_USERNAME` | RUT sin puntos ni guión | - |
-| `SANTANDER_PASSWORD` | Contraseña de Santander | - |
-| `SANTANDER_CLIENT_ID` | Client ID de OAuth | - |
-| `SANTANDER_API_CLIENT_ID` | API Client ID | - |
 | `PORT` | Puerto del servidor | `3000` |
 | `HEADLESS` | Ejecutar navegador sin interfaz | `true` |
 | `VERBOSE` | Mostrar logs detallados | `true` |
