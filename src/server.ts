@@ -23,6 +23,7 @@ interface SantanderCredentials {
   password: string;
   clientId: string;
   apiClientId: string;
+  secretKey: string;
 }
 
 // Obtener credenciales desde request body
@@ -34,6 +35,7 @@ function getCredentials(
     password: body?.password || "",
     clientId: body?.clientId || "",
     apiClientId: body?.apiClientId || "",
+    secretKey: body?.secretKey || "",
   };
 }
 
@@ -43,7 +45,8 @@ function validateCredentials(credentials: SantanderCredentials): boolean {
     credentials.username &&
     credentials.password &&
     credentials.clientId &&
-    credentials.apiClientId
+    credentials.apiClientId &&
+    credentials.secretKey
   );
 }
 
@@ -75,6 +78,13 @@ app.post("/api/movimientos", async (req: Request, res: Response) => {
         success: false,
         error:
           "Faltan credenciales. Debes enviar username, password, clientId y apiClientId en el body",
+      });
+    }
+
+    if (credentials.secretKey !== process.env.SECRET_KEY) {
+      return res.status(403).json({
+        success: false,
+        error: "Clave secreta inválida.",
       });
     }
 
